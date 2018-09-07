@@ -2,11 +2,11 @@
 
 <div class="element">
   <div class="element-left">
-    <app-c-hotel-list></app-c-hotel-list>
+    <app-c-hotel-list [hotels]="hotels" [currentHotel]="currentHotel" (hotel)="selectHotel($event)"></app-c-hotel-list>
   </div>
   <div class="element-right">
-    <app-c-hotel-weather></app-c-hotel-weather>
-    <app-c-hotel-followers></app-c-hotel-followers>
+    <app-c-hotel-weather [weather]="currentHotel.weather"></app-c-hotel-weather>
+    <app-c-hotel-followers [profile]="currentHotel.profile"></app-c-hotel-followers>
   </div>
   <div class="clear"> </div>
 </div>

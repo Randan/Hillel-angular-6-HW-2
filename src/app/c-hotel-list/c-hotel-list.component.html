@@ -11,12 +11,14 @@
       <div class="village">
         <h3>Righteous indignation & like</h3>
         <span class="line"> </span>
-        {{ hotels }}
-        <div 
-          class="activity_box"
-          *ngFor="let hotel of hotels">
+        <div class="activity_box">
           <div class="scrollbar" id="style-2">
-            <div class="activity-row">
+            <div 
+              class="activity-row" 
+              *ngFor="let hotel of hotels"
+              (click)="selectHotel(hotel)"
+              [ngClass]="{'active-hotel': hotel.id === currentHotel.id}"
+            >
               <div class="activity-desc">
                 <h5>{{ hotel.title }}</h5>
                 <p>{{ hotel.address }}</p>

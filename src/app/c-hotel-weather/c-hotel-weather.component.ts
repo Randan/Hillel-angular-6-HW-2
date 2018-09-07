@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CHotelWeatherComponent {
 
-  // @Input()
-  // public weather: Weather;
+  @Input()
+  public weather: Weather;
 
 }

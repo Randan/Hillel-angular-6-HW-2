@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   public title = 'Hot Weather Widget';
 
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
       weather:  {
         temperature: 12,
         wind: 11,
-        icon: 'sun'
+        icon: 'cloud'
       },
       profile: {
         followers: 112,
@@ -80,10 +80,10 @@ export class AppComponent implements OnInit {
       stars: 5
     }
   ];
+  public currentHotel: Hotel = this.hotels[0];
 
-  public constructor() {
+  public selectHotel = (hotel: Hotel): void => {
+    this.currentHotel = hotel;
   }
 
-  public ngOnInit(): void {
-  }
 }
